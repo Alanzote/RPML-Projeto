@@ -38,7 +38,7 @@ public class Tabelas {
     }
 
     // Imprime a tabela verdade do Case 7.
-    public static void Case7(char Var1, char Var2, char Op1, char Op2) {
+    public static void Case7(char Var1, char Var2, char Var3, char Op1, char Op2) {
         Helper.printBit(true); // Retorna 'V'.
         Helper.printBit(false); // Retorna 'F';
     }

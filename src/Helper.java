@@ -11,4 +11,7 @@ public class Helper {
 
     // Todos os operadores aceitos.
     public static final ArrayList<Character> Operadores = new ArrayList<Character>(Arrays.asList('v', '^', '~'));
+
+    // Todos os operadores com exceção do NÃO.
+    public static final ArrayList<Character> OperadoresFiltrados = new ArrayList<Character>(Arrays.asList('v', '^'));
 }
