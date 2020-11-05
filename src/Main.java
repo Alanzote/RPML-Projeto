@@ -82,13 +82,15 @@ public class Main {
                             throw new Exception("Índice 0 é um operador, esperáva-se uma variável.");
                         else if (!Helper.OperadoresFiltrados.contains(Chars[1]))
                             throw new Exception("Índice 1 é uma variável ou ~, esperáva-se um operador.");
-                        else if (Helper.Operadores.contains(Chars[2]))
+                        else if (Chars[2] != '~')
+                            throw new Exception("ïndice 2 não é um operador ~.");
+                        else if (Helper.Operadores.contains(Chars[3]))
                             throw new Exception("Índice 3 é um operador, esperáva-se uma variável.");
                         else if (Chars[0] == Chars[2])
                             throw new Exception("Índice 0 é igual ao índice 2, esperáva-se variáveis diferentes.");
 
                         // Chamar Case 5.
-                        Tabelas.Case5(Chars[0], Chars[2], Chars[1]);
+                        Tabelas.Case5(Chars[0], Chars[3], Chars[1]);
                     }
                 } break;
                 case 5: {
@@ -132,7 +134,7 @@ public class Main {
                         // Chamar Case 7.
                         Tabelas.Case7(Chars[0], Chars[2], Chars[4], Chars[1], Chars[3]);
                     }
-                }
+                } break;
                 case 6: {
                     // Verificar Condições.
                     if (Chars[0] == '~') { // Case 8.
@@ -203,16 +205,46 @@ public class Main {
                                 throw new Exception("Índice 0 é igual ao índice 5, esperáva-se variáveis diferentes.");
 
                             // Chamar Case 10.
-                            Tabelas.Case10(Chars[0], Chars[3], Chars[5], Chars[1], Chars[3]);
+                            Tabelas.Case10(Chars[0], Chars[2], Chars[5], Chars[1], Chars[3]);
                         }
                     }
                 } break;
                 case 7: {
+                    // Verificar Condições.
                     if (Chars[0] == '~') {
+                        // Verificar Condições.
                         if (Chars[3] == '~') { // Case 11.
+                            // Verificar Condições.
+                            if (Helper.Operadores.contains(Chars[1]))
+                                throw new Exception("Índice 1 é um operador, esperáva-se uma variável.");
+                            else if (!Helper.OperadoresFiltrados.contains(Chars[2]))
+                                throw new Exception("Índice 2 é uma variável ou ~, esperáva-se um operador.");
+                            else if (Helper.Operadores.contains(Chars[4]))
+                                throw new Exception("Índice 4 é um operador, esperáva-se uma variável.");
+                            else if (!Helper.OperadoresFiltrados.contains(Chars[5]))
+                                throw new Exception("Índice 5 é uma variável ou ~, esperáva-se um operador.");
+                            else if (Helper.Operadores.contains(Chars[6]))
+                                throw new Exception("Índice 6 é um operador, esperáva-se uma variável.");
 
+                            // Chamar Case 11.
+                            Tabelas.Case11(Chars[1], Chars[4], Chars[6], Chars[2], Chars[5]);
                         } else { // Case 12.
+                            // Verificar Condições.
+                            if (Helper.Operadores.contains(Chars[1]))
+                                throw new Exception("Índice 1 é um operador, esperáva-se uma variável.");
+                            else if (!Helper.OperadoresFiltrados.contains(Chars[2]))
+                                throw new Exception("Índice 2 é uma variável ou ~, esperáva-se um operador.");
+                            else if (Helper.Operadores.contains(Chars[3]))
+                                throw new Exception("Índice 3 é um operador, esperáva-se uma variável.");
+                            else if (!Helper.OperadoresFiltrados.contains(Chars[4]))
+                                throw new Exception("Índice 4 é uma variável ou ~, esperáva-se um operador.");
+                            else if (Chars[5] != '~')
+                                throw new Exception("Índice 4 é um operador ou variável, esperáva-se ~.");
+                            else if (Helper.Operadores.contains(Chars[6]))
+                                throw new Exception("Índice 6 é um operador, esperáva-se uma variável.");
 
+                            // Chamar Case 12.
+                            Tabelas.Case12(Chars[1], Chars[3], Chars[6], Chars[2], Chars[4]);
                         }
                     } else if (Helper.OperadoresFiltrados.contains(Chars[0])) {
                         throw new Exception("Índice 0 não é ~ ou uma variável.");
